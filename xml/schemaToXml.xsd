@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:contacts="http://www.example.com/bootcamp"
+    targetNamespace="http://www.example.com/bootcamp"
+    elementFormDefault="qualified">
+    
+    <attributeGroup name="ContactAttributes">
+        <attribute name="version" type="decimal" fixed="1.0" />
+        <attribute name="source" type="string"/>
+    </attributeGroup>
+    
+    <element name="contacts">
+        <complexType>
+            <sequence>
+                <element name="contact" minOccurs="0" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="contacts:NameType"/>
+                            <element name="location" type="contacts:LocationType"/>
+                            <element name="phone" type="string"/>
+                            <element name="knows" type="contacts:KnowsType"/>
+                            <element name="description" type="contacts:DescriptionType"/>
+                        </sequence>
+                        <attribute name="tags" type="token"/>
+                        <attribute name="person" type="ID"/>
+                    </complexType>
+                </element>
+            </sequence>
+            <attributeGroup ref="contacts:ContactAttributes"/>
+        </complexType>
+    </element>
+    
+    <complexType name="NameType">
+        <group ref="contacts:NameGroup"/>
+        <attribute name="title" type="string"/>
+    </complexType>
+    
+    <group name="NameGroup">
+        <sequence>
+            <element name="first" type="string" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="middle" type="string" minOccurs="0" maxOccurs="1"/>
+            <element name="last" type="string"/>
+        </sequence>
+    </group>
+    
+    <complexType name="LocationType">
+        <choice minOccurs="0" maxOccurs="unbounded">
+            <element name="address" type="string"/>
+            <sequence>
+                <element name="latitude" type="float"/>
+                <element name="longitude" type="float"/>
+            </sequence>
+        </choice>
+    </complexType>
+    
+    <complexType name="KnowsType">
+        <attribute name="contacts" type="IDREFS"/>
+    </complexType>
+    
+    <complexType name="DescriptionType" mixed="true">
+        <choice minOccurs="0" maxOccurs="unbounded">
+            <element name="em" type="string"/>
+            <element name="strong" type="string"/>
+            <element name="br" type="string"/>
+        </choice>
+    </complexType>
+</schema>

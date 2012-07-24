@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Accounts>
+    <Account>
+        <DateCreated>Jan 1, 2004, 14:29</DateCreated>
+        <Customer>
+            <Name title="Mr.">
+                <first>John</first>
+                <middle>Q</middle>
+                <last>Public</last>
+            </Name>
+            <Address>
+                <StreetAddress>123 Somewhere Ave.</StreetAddress>
+                <City>Some Town</City>
+                <State>ZZ</State>
+                <Zip>000000000</Zip>
+            </Address>
+            <Email>jpublic@someprovider.com</Email>
+            <Phone type="mobile">5555555555</Phone>
+        </Customer>
+    </Account>
+</Accounts>
