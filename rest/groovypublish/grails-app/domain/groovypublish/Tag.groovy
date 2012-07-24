@@ -1,13 +1,18 @@
 package groovypublish
 
-class Tag {
+class Tag implements Comparable {
 
     static hasMany = [posts:Post]
     static belongsTo = Post
 
-    List posts
+    SortedSet posts
     String tag
 
     static constraints = {
+    }
+
+    int compareTo(obj)
+    {
+        return tag.compareTo(obj.tag)
     }
 }

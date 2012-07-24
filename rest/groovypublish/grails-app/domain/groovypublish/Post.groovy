@@ -10,8 +10,8 @@ class Post {
     Date lastUpdated
     Boolean published = false
 
-    List comments
-    List tags
+    SortedSet comments
+    SortedSet tags
 
     static constraints = {
         title(nullable:false, blank:false, length:1..50)

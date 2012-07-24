@@ -1,6 +1,6 @@
 package groovypublish
 
-class Comment {
+class Comment implements Comparable{
 
     static belongsTo = Post
 
@@ -10,5 +10,11 @@ class Comment {
     Date dateCreated
 
     static constraints = {
+        post(nullable: false, blank: false)
+    }
+
+    int compareTo(obj)
+    {
+        return dateCreated.compareTo(obj.dateCreated)
     }
 }

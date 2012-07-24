@@ -9,8 +9,9 @@ class TagController {
     }
     def save = {
         def tag = new Tag(params)
-        tag.post = Post.get(params.postId)
-        if(tag.save()) {
+        def post = Post.get(params.postId)
+        post.tags.add(tag)
+        if(post.save() && tag.save()) {
             redirect(
                     controller:'post',
                     action:'view',
