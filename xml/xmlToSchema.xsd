@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:questionnaire="http://www.example.com/questionnaire"
+    targetNamespace="http://www.example.com/questionnaire"
+    elementFormDefault="qualified">
+    
+    <attributeGroup name="QuestionnaireAttributes">
+        <attribute name="version" type="decimal"/>
+        <attribute name="comapny" type="string"/>
+    </attributeGroup>
+    
+    <element name="questionnaire">
+        <complexType>
+            <sequence>
+                <element name="participant" minOccurs="0" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="questionnaire:NameType"/>
+                            <element name="sex" type="questionnaire:SexType"/>
+                            <element name="DOB" type="date"/>
+                            <element name="maritalStatus" type="questionnaire:MaritalStatusType"/>
+                            <element name="religion" type="string"/>
+                            <element name="phone" type="questionnaire:PhoneType" minOccurs="0" maxOccurs="unbounded"/>
+                            <element name="socSec" type="string"/>
+                        </sequence>
+                        <attribute name="ID" type="string"/>
+                    </complexType>
+                </element>
+            </sequence>
+            <attributeGroup ref="questionnaire:QuestionnaireAttributes"/>
+        </complexType>
+    </element>
+    
+    <complexType name="NameType">
+        <group ref="questionnaire:NameGroup"/>
+        <attribute name="title" type="string"/>
+    </complexType>
+    
+    <group name="NameGroup">
+        <sequence>
+            <element name="first" type="string" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="middle" type="string" minOccurs="0" maxOccurs="1"/>
+            <element name="last" type="string"/>
+        </sequence>
+    </group>
+    
+    <simpleType name="SexType">
+        <restriction base="string">
+            <enumeration value="male"/>
+            <enumeration value="female"/>
+            <enumeration value="undisclosed"/>
+        </restriction>
+    </simpleType>
+    
+    <simpleType name="MaritalStatusType">
+        <restriction base="string">
+            <enumeration value="single"/>
+            <enumeration value="married"/>
+            <enumeration value="divorced"/>
+            <enumeration value="widowed"/>
+            <enumeration value="undisclosed"/>
+        </restriction>
+    </simpleType>
+    
+    <complexType name="PhoneType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="kind" default="Home">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="Home"/>
+                            <enumeration value="Work"/>
+                            <enumeration value="Mobile"/>
+                            <enumeration value="Fax"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+    
+</schema>
