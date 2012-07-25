@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:third="http://www.example.com/modularimport"
+    targetNamespace="http://www.example.com/modularimport"
+    elementFormDefault="qualified">
+    
+    <!--You need to create a TagsListType-->
+    
+    <!--Hint: first make a TagsType-->
+    
+</schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:third="http://www.example.com/modularimport"
+    targetNamespace="http://www.example.com/modularimport"
+    elementFormDefault="qualified">
+    
+    <simpleType name="TagsType">
+        <restriction base="string">
+            <enumeration value="fitness"/>
+            <enumeration value="health"/>
+            <enumeration value="medical"/>
+            <enumeration value="nutrition"/>
+            <enumeration value="diet"/>
+        </restriction>
+    </simpleType>
+    
+    <simpleType name="TagsListType">
+        <list itemType="third:TagsType"/>
+    </simpleType>
+    
+</schema>

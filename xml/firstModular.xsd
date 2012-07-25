@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:first="http://www.example.com/modularinclude"
+    targetNamespace="http://www.example.com/modularinclude"
+    elementFormDefault="qualified">
+    
+    <element name="blogs">
+        <complexType>
+            <sequence>
+               <element name="blog" type="first:BlogType" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <complexType name="BlogType">
+       <sequence>
+           <element name="blogTitle" type="string" minOccurs="0" maxOccurs="1"/>
+           <element name="blogger" minOccurs="0" maxOccurs="1">
+               <complexType>
+                   <sequence>
+                       <element name="name" type="first:NameType"/>
+                       <element name="degree" type="string"/>
+                       <element name="DOB" type="date"/>
+                       <element name="phone" type="first:PhoneType" minOccurs="0" maxOccurs="unbounded"/>
+                   </sequence>
+                   <attribute name="ID" type="string"/>
+               </complexType>
+           </element>
+           <element name="dateStarted" type="dateOrYearType"/>
+       </sequence>
+       <attributeGroup ref="first:BlogAttributes"/>
+   </complexType>
+    
+    <!--Create a NameGroup-->
+    
+    <!--Create a NameType that references NameGroup-->
+    
+    <complexType name="PhoneType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="kind" default="Home">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="Home"/>
+                            <enumeration value="Work"/>
+                            <enumeration value="Mobile"/>
+                            <enumeration value="Fax"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+    
+    <attributeGroup name="BlogAttributes">
+        <attribute name="tags" type="TagsListType"/>
+    </attributeGroup>
+    
+</schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:second="http://www.example.com/modularinclude"
+    targetNamespace="http://www.example.com/modularinclude"
+    elementFormDefault="qualified">
+    
+    <simpleType name="dateOrYearType">
+        <union memberTypes="date second:YearType"/>
+    </simpleType>
+    
+    <simpleType name="YearType">
+        <restriction base="integer">
+            <minInclusive value="1900"/>
+            <maxInclusive value="2012"/>
+        </restriction>
+    </simpleType>
+    
+</schema>

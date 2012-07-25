@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:second="http://www.example.com/modularinclude"
+    targetNamespace="http://www.example.com/modularinclude"
+    elementFormDefault="qualified">
+    
+    <!--You need to create a YearType. Use min and max restrictions-->
+    
+    <!--You need to create a dateOrYearType-->
+    
+</schema>
