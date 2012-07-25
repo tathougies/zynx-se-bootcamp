@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blogs
+    xmlns="http://www.example.com/modularinclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.com/modularinclude firstModularSolution.xsd"
+    >
+    <blog tags="medical health">
+        <blogTitle>The Web Doctor</blogTitle>
+        <blogger>
+            <name title="Dr">
+                <first>Steve</first>
+                <middle>Michael</middle>
+                <last>Patterson</last>
+            </name>
+            <degree>MD from Harvard Med</degree>
+            <DOB>1963-05-27</DOB>
+            <phone kind="Work">909-111-1111</phone>
+            <phone kind="Mobile">909-222-2222</phone>
+        </blogger>
+        <dateStarted>1997</dateStarted>
+    </blog>
+    <blog tags="fitness workout">
+        <blogTitle>Get Fit Now!</blogTitle>
+        <blogger>
+            <name title="Ms.">
+                <first>Alexa</first>
+                <middle>Lisa</middle>
+                <last>Xu</last>
+            </name>
+            <degree>GED</degree>
+            <DOB>1983-01-15</DOB>
+            <phone kind="Mobile">909-333-3333</phone>
+            <phone kind="Home">909-444-4444</phone>
+        </blogger>
+        <dateStarted>2007-11-30</dateStarted>
+    </blog>
+    <blog tags="nutrition diet">
+        <blogTitle>Eat Healthy</blogTitle>
+        <blogger>
+            <name title="Mr.">
+                <first>Brian</first>
+                <middle>Jack</middle>
+                <last>Williams</last>
+            </name>
+            <degree>B.S. in Nutrition from UCSD</degree>
+            <DOB>1975-10-15</DOB>
+            <phone kind="Work">909-555-5555</phone>
+            <phone kind="Home">909-666-6666</phone>
+        </blogger>
+        <dateStarted>2000</dateStarted>
+    </blog>
+</blogs>
