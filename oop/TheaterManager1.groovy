@@ -35,4 +35,14 @@ class TheaterManager1 {
     FoodStand1 goToFoodStand() {
         return foodStand
     }
+
+    void runTheaters() {
+        for (theater in theaters) {
+            theater.dimLights()
+            theater.showPreviews()
+            theater.showMovie()
+            theater.rollCredits()
+            theater.cleanTheater()
+        }
+    }
 }

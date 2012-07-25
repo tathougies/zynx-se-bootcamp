@@ -4,7 +4,7 @@ class TicketBooth2 {
     private ticketPrice
     private tickets
     private money
-    private validate
+    private validate = new Validator()
 
     TicketBooth2(String[] movieNames,
                  Map<String, Time> movieTimes,
@@ -17,7 +17,6 @@ class TicketBooth2 {
         this.ticketPrice = ticketPrice
         this.tickets = tickets
         this.money = money
-        this.validate = new Validator()
     }
 
     String toString() {

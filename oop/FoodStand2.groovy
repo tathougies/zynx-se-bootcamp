@@ -3,7 +3,7 @@ class FoodStand2 {
     private foodPrices
     private foodStock
     private money
-    private validate
+    private validate = new Validator()
 
     FoodStand2(String[] foodNames,
                Map<String, Money> foodPrices,
@@ -14,7 +14,6 @@ class FoodStand2 {
         this.foodPrices = foodPrices
         this.foodStock = foodStock
         this.money = money
-        this.validate = new Validator()
     }
 
     String toString() {

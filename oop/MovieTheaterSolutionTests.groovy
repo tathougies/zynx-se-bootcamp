@@ -121,3 +121,60 @@ foodStand2.restockProduct("Soda", 40)
 foodStand2.showAmountOfProduct("Soda")
 foodStand2.restockProduct("Soda", -20)
 foodStand2.restockProduct("Pizza", 10)
+
+NoTaxChangeCalculator noTaxCalculator = new NoTaxChangeCalculator("That is not enough money")
+println noTaxCalculator.calculateChange(new Money(12.0), new Money(10.0))
+try {
+    noTaxCalculator.calculateChange(new Money(10.0), new Money(12.0))
+} catch (Exception e) {
+    println e.getMessage()
+}
+
+foodStand3 = new FoodStand3(foodNames, foodPrices, foodStock, money, noTaxCalculator)
+
+foodStand3.showPrice("Popcorn")
+foodStand3.showPrice("Lobster")
+
+foodStand3.showAmountOfProduct("Hot Dog")
+foodStand3.showAmountOfProduct("Lasagna")
+
+foodStand3.buyProduct("Hot Dog", new Money(10.0))
+foodStand3.showAmountOfProduct("Hot Dog")
+
+foodStand3.buyProduct("Popcorn", new Money(1.0))
+
+foodStand3.buyProduct("Soda", new Money(10.0))
+foodStand3.buyProduct("Lobster", new Money(5.00))
+
+foodStand3.restockProduct("Soda", 40)
+foodStand3.showAmountOfProduct("Soda")
+foodStand3.restockProduct("Soda", -20)
+foodStand3.restockProduct("Pizza", 10)
+
+ticketBooth3 = new TicketBooth3(movieNames, movieTimes, ticketPrice, tickets, money, noTaxCalculator)
+ticketBooth3.showTicketPrice("Spiderman")
+ticketBooth3.showTicketPrice("Up")
+
+ticketBooth3.buyTicket("Spiderman", new Time(18, 10), new Money(20.0))
+ticketBooth3.showNumberOfTickets()
+
+ticketBooth3.buyTicket("Batman", new Time(18, 10), new Money(10.0))
+ticketBooth3.buyTicket("Wall-E", new Time(18, 10), new Money(5.00))
+ticketBooth3.buyTicket("Spiderman", new Time(18, 15), new Money(5.00))
+
+ticketBooth3.restockTickets(10)
+ticketBooth3.restockTickets(-10)
+
+californiaTaxChangeCalculator = new CaliforniaTaxChangeCalculator("Sorry that's not enough... in California")
+
+ticketBooth3.setPaymentCalculator(californiaTaxChangeCalculator)
+ticketBooth3.buyTicket("Batman", new Time(18, 10), new Money(10.0))
+ticketBooth3.buyTicket("Batman", new Time(18, 10), new Money(13.5))
+
+theaterManager.runTheaters()
+
+TheaterFacade[] theaterFacades = [new TheaterFacade(firstTheater), new TheaterFacade(secondTheater), new TheaterFacade(thirdTheater)]
+theaterManager2 = new TheaterManager2(ticketBooth3, foodStand3, theaterFacades, movieLocations, money)
+theaterManager2.runTheaters()
+
+
