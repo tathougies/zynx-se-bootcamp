@@ -1,7 +1,7 @@
-class TheaterFacade {
+class TheaterFacade2 {
     private theater
 
-    TheaterFacade(Theater1 theater) {
+    TheaterFacade2(Theater2 theater) {
         this.theater = theater
     }
 

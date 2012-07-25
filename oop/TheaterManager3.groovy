@@ -1,13 +1,13 @@
-class TheaterManager2 {
+class TheaterManager3 {
     private ticketBooth
     private foodStand
     private theaters
     private movieLocations
     private money
 
-    TheaterManager2(TicketBooth3 ticketBooth,
+    TheaterManager3(TicketBooth3 ticketBooth,
                     FoodStand3 foodStand,
-                    TheaterFacade1[] theaters,
+                    TheaterFacade2[] theaters,
                     Map<String, Theater1> movieLocations,
                     Money money
     ) {

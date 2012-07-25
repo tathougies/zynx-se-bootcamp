@@ -173,8 +173,19 @@ ticketBooth3.buyTicket("Batman", new Time(18, 10), new Money(13.5))
 
 theaterManager.runTheaters()
 
-TheaterFacade[] theaterFacades = [new TheaterFacade(firstTheater), new TheaterFacade(secondTheater), new TheaterFacade(thirdTheater)]
+TheaterFacade1[] theaterFacades = [new TheaterFacade1(firstTheater), new TheaterFacade1(secondTheater), new TheaterFacade1(thirdTheater)]
 theaterManager2 = new TheaterManager2(ticketBooth3, foodStand3, theaterFacades, movieLocations, money)
 theaterManager2.runTheaters()
 
 
+time = new Time(12, 0)
+firstTheater = new NormalTheater("10", "Spiderman", times)
+secondTheater = new NormalTheater("4", "Batman", times)
+thirdTheater = new NormalTheater("6", "Superman", times)
+fourthTheater = new DriveInTheaterAdaptor(new DriveInTheater("Drive in", "Cars", time))
+movieTimes = ["Spiderman":times, "Batman":times, "Superman":times, "Cars":[time]]
+
+TheaterFacade2[] theaterFacades2 = [new TheaterFacade2(firstTheater), new TheaterFacade2(secondTheater), new TheaterFacade2(thirdTheater), new TheaterFacade2(fourthTheater)]
+theaterManager3 = new TheaterManager3(ticketBooth3, foodStand3, theaterFacades2, movieLocations, money)
+
+theaterManager3.runTheaters()
