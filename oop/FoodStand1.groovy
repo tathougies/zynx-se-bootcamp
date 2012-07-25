@@ -15,6 +15,10 @@ class FoodStand1 {
         this.money = money
     }
 
+    String[] getFoodNames() {
+        return foodNames
+    }
+
     String toString() {
         return "Food Stand"
     }
@@ -38,14 +42,14 @@ class FoodStand1 {
         }
     }
 
-    void showProductNames() {
+    void showFoodNames() {
         println "We have the following foods:"
         for (foodName in foodNames) {
             println foodName
         }
     }
 
-    void showAmountOfProduct(String foodName) {
+    void showAmountOfFood(String foodName) {
         if (foodName in foodNames) {
             println "We have ${foodStock[foodName]} ${foodName}s."
         }
@@ -54,7 +58,7 @@ class FoodStand1 {
         }
     }
 
-    void buyProduct(String foodName, Money payment) {
+    void buyFood(String foodName, Money payment) {
         if (foodName in foodNames) {
             if (foodStock[foodName] > 0) {
                 try {
@@ -75,7 +79,7 @@ class FoodStand1 {
         }
     }
 
-    void restockProduct(String foodName, Integer newFoodAmount) {
+    void restockFood(String foodName, Integer newFoodAmount) {
         if (foodName in foodNames) {
             if (newFoodAmount >= 0) {
                 foodStock[foodName] += newFoodAmount

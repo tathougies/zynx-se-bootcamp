@@ -16,6 +16,10 @@ class FoodStand2 {
         this.money = money
     }
 
+    String[] getFoodNames() {
+        return foodNames
+    }
+
     String toString() {
         return "Food Stand"
     }
@@ -52,14 +56,14 @@ class FoodStand2 {
         }
     }
 
-    void showProductNames() {
+    void showFoodNames() {
         println "We have the following foods:"
         for (foodName in foodNames) {
             println foodName
         }
     }
 
-    void showAmountOfProduct(String foodName) {
+    void showAmountOfFood(String foodName) {
         try {
             validate.inList(foodName, foodNames, noFoodMessage(foodName))
             println "We have ${foodStock[foodName]} ${foodName}s."
@@ -69,7 +73,7 @@ class FoodStand2 {
         }
     }
 
-    void buyProduct(String foodName, Money payment) {
+    void buyFood(String foodName, Money payment) {
         try {
             validate.inList(foodName, foodNames, noFoodMessage(foodName))
             validate.isPositive(foodStock[foodName], outOfStockMessage(foodName))
@@ -82,7 +86,7 @@ class FoodStand2 {
         }
     }
 
-    void restockProduct(String foodName, Integer newFoodAmount) {
+    void restockFood(String foodName, Integer newFoodAmount) {
         try {
             validate.inList(foodName, foodNames, noFoodMessage(foodName))
             validate.isPositive(newFoodAmount, restockingWithNothingMessage())

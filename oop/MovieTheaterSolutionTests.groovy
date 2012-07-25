@@ -34,23 +34,23 @@ foodStand = new FoodStand1(foodNames, foodPrices, foodStock, money)
 foodStand.showPrice("Popcorn")
 foodStand.showPrice("Lobster")
 
-foodStand.showProductNames()
+foodStand.showFoodNames()
 
-foodStand.showAmountOfProduct("Hot Dog")
-foodStand.showAmountOfProduct("Lasagna")
+foodStand.showAmountOfFood("Hot Dog")
+foodStand.showAmountOfFood("Lasagna")
 
-foodStand.buyProduct("Hot Dog", new Money(10.0))
-foodStand.showAmountOfProduct("Hot Dog")
+foodStand.buyFood("Hot Dog", new Money(10.0))
+foodStand.showAmountOfFood("Hot Dog")
 
-foodStand.buyProduct("Popcorn", new Money(1.0))
+foodStand.buyFood("Popcorn", new Money(1.0))
 
-foodStand.buyProduct("Soda", new Money(10.0))
-foodStand.buyProduct("Lobster", new Money(5.00))
+foodStand.buyFood("Soda", new Money(10.0))
+foodStand.buyFood("Lobster", new Money(5.00))
 
-foodStand.restockProduct("Soda", 40)
-foodStand.showAmountOfProduct("Soda")
-foodStand.restockProduct("Soda", -20)
-foodStand.restockProduct("Pizza", 10)
+foodStand.restockFood("Soda", 40)
+foodStand.showAmountOfFood("Soda")
+foodStand.restockFood("Soda", -20)
+foodStand.restockFood("Pizza", 10)
 
 String[] movieNames = ["Spiderman", "Batman", "Superman"]
 
@@ -106,21 +106,21 @@ foodStand2 = new FoodStand2(foodNames, foodPrices, foodStock, money)
 foodStand2.showPrice("Popcorn")
 foodStand2.showPrice("Lobster")
 
-foodStand2.showAmountOfProduct("Hot Dog")
-foodStand2.showAmountOfProduct("Lasagna")
+foodStand2.showAmountOfFood("Hot Dog")
+foodStand2.showAmountOfFood("Lasagna")
 
-foodStand2.buyProduct("Hot Dog", new Money(10.0))
-foodStand2.showAmountOfProduct("Hot Dog")
+foodStand2.buyFood("Hot Dog", new Money(10.0))
+foodStand2.showAmountOfFood("Hot Dog")
 
-foodStand2.buyProduct("Popcorn", new Money(1.0))
+foodStand2.buyFood("Popcorn", new Money(1.0))
 
-foodStand2.buyProduct("Soda", new Money(10.0))
-foodStand2.buyProduct("Lobster", new Money(5.00))
+foodStand2.buyFood("Soda", new Money(10.0))
+foodStand2.buyFood("Lobster", new Money(5.00))
 
-foodStand2.restockProduct("Soda", 40)
-foodStand2.showAmountOfProduct("Soda")
-foodStand2.restockProduct("Soda", -20)
-foodStand2.restockProduct("Pizza", 10)
+foodStand2.restockFood("Soda", 40)
+foodStand2.showAmountOfFood("Soda")
+foodStand2.restockFood("Soda", -20)
+foodStand2.restockFood("Pizza", 10)
 
 NoTaxChangeCalculator noTaxCalculator = new NoTaxChangeCalculator("That is not enough money")
 println noTaxCalculator.calculateChange(new Money(12.0), new Money(10.0))
@@ -135,21 +135,21 @@ foodStand3 = new FoodStand3(foodNames, foodPrices, foodStock, money, noTaxCalcul
 foodStand3.showPrice("Popcorn")
 foodStand3.showPrice("Lobster")
 
-foodStand3.showAmountOfProduct("Hot Dog")
-foodStand3.showAmountOfProduct("Lasagna")
+foodStand3.showAmountOfFood("Hot Dog")
+foodStand3.showAmountOfFood("Lasagna")
 
-foodStand3.buyProduct("Hot Dog", new Money(10.0))
-foodStand3.showAmountOfProduct("Hot Dog")
+foodStand3.buyFood("Hot Dog", new Money(10.0))
+foodStand3.showAmountOfFood("Hot Dog")
 
-foodStand3.buyProduct("Popcorn", new Money(1.0))
+foodStand3.buyFood("Popcorn", new Money(1.0))
 
-foodStand3.buyProduct("Soda", new Money(10.0))
-foodStand3.buyProduct("Lobster", new Money(5.00))
+foodStand3.buyFood("Soda", new Money(10.0))
+foodStand3.buyFood("Lobster", new Money(5.00))
 
-foodStand3.restockProduct("Soda", 40)
-foodStand3.showAmountOfProduct("Soda")
-foodStand3.restockProduct("Soda", -20)
-foodStand3.restockProduct("Pizza", 10)
+foodStand3.restockFood("Soda", 40)
+foodStand3.showAmountOfFood("Soda")
+foodStand3.restockFood("Soda", -20)
+foodStand3.restockFood("Pizza", 10)
 
 ticketBooth3 = new TicketBooth3(movieNames, movieTimes, ticketPrice, tickets, money, noTaxCalculator)
 ticketBooth3.showTicketPrice("Spiderman")
@@ -189,3 +189,19 @@ TheaterFacade2[] theaterFacades2 = [new TheaterFacade2(firstTheater), new Theate
 theaterManager3 = new TheaterManager3(ticketBooth3, foodStand3, theaterFacades2, movieLocations, money)
 
 theaterManager3.runTheaters()
+
+println foodStand.getFoodNames()
+println foodStand2.getFoodNames()
+println foodStand3.getFoodNames()
+
+TheaterFacade2[] theaterFacades21 = [new TheaterFacade2(firstTheater), new TheaterFacade2(secondTheater), new TheaterFacade2(thirdTheater), new TheaterFacade2(fourthTheater)]
+foodStand4 = new FoodStand4(foodNames, foodPrices, foodStock, money, noTaxCalculator)
+ticketBooth4 = new TicketBooth4(movieNames, movieTimes, ticketPrice, tickets, money, noTaxCalculator)
+
+theaterManager4 = new TheaterManager4(ticketBooth4, foodStand4, theaterFacades21, movieLocations, money)
+
+movieTheaterVisitor = new RestockVisitor(42)
+theaterManager4.visitStands(movieTheaterVisitor)
+
+movieTheaterVisitor = new PrintVisitor()
+theaterManager4.visitStands(movieTheaterVisitor)

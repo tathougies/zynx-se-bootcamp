@@ -1,4 +1,4 @@
-class FoodStand3 {
+class FoodStand4 {
     private foodNames
     private foodPrices
     private foodStock
@@ -6,7 +6,7 @@ class FoodStand3 {
     private validate = new Validator()
     private paymentCalculator
 
-    FoodStand3(String[] foodNames,
+    FoodStand4(String[] foodNames,
                Map<String, Money> foodPrices,
                Map<String, Integer> foodStock,
                Money money,
@@ -97,25 +97,9 @@ class FoodStand3 {
     void setPaymentCalculator(ChangeCalculator paymentCalculator) {
         this.paymentCalculator = paymentCalculator
     }
+
+    void accept(MovieTheaterVisitor movieTheaterVisitor) {
+        movieTheaterVisitor.visit(this)
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
