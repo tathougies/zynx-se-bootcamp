@@ -1,0 +1,20 @@
+Lab Part 1: Refactoring Into Classes
+
+Everyone likes movie theaters, right?  Well, we decided to put together our own
+movie theater class to simulate the pieces of a working movie theater.
+However, it turns out we weren't thinking too far ahead and put everything into
+a single monolithic class.  
+
+To improve maintainability and set this project more in line with OO principles, 
+we would like you to refactor our MovieTheater class into a few separate 
+classes.  These classes should be split up by responsibility such as what 
+aspect of a running theater they control.  We suggest you create a
+TheaterManager class that will be composed of your other lower level classes.  
+These lower levels classes should be called FoodStand, TicketBooth, and Theater.
+We've given you the names so that it is easier to use any code we may need to
+provide you in the future. 
+
+We have provided two classes, Money and Time, to replace the use of floats
+to improve readability.  Additionally, there is a TestSuites file we have
+provided that has defined an assert that allows you to assert against
+strings printed to standard out.
