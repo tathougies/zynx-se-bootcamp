@@ -90,4 +90,8 @@ class TicketBooth1 {
             println "You can't restock with a negative amount!"
         }
     }
+
+    Money getMoney() {
+        return money.clone()
+    }
 }

@@ -4,7 +4,7 @@ class TicketBooth4 {
     private ticketPrice
     private tickets
     private money
-    private validate = new Validator()
+    private validate = new Validator1()
     private paymentCalculator
 
     TicketBooth4(String[] movieNames,
@@ -98,5 +98,9 @@ class TicketBooth4 {
 
     void accept(MovieTheaterVisitor1 movieTheaterVisitor) {
         movieTheaterVisitor.visit(this)
+    }
+
+    Money getMoney() {
+        return money.clone()
     }
 }

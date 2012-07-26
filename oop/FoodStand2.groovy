@@ -3,7 +3,7 @@ class FoodStand2 {
     private foodPrices
     private foodStock
     private money
-    private validate = new Validator()
+    private validate = new Validator1()
 
     FoodStand2(String[] foodNames,
                Map<String, Money> foodPrices,
@@ -96,6 +96,10 @@ class FoodStand2 {
         catch (Exception e) {
             println e.getMessage()
         }
+    }
+
+    Money getMoney() {
+        return money.clone()
     }
 }
 

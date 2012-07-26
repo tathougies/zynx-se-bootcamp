@@ -1,4 +1,4 @@
-class Validator {
+class Validator1 {
 
     void inList(Object obj, Object[] list, String message) throws Exception {
         if (!(list.contains(obj))) {

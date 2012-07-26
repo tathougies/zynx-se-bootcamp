@@ -4,7 +4,7 @@ class TicketBooth2 {
     private ticketPrice
     private tickets
     private money
-    private validate = new Validator()
+    private validate = new Validator1()
 
     TicketBooth2(String[] movieNames,
                  Map<String, Time> movieTimes,
@@ -95,5 +95,9 @@ class TicketBooth2 {
         catch (Exception e) {
             println e.getMessage()
         }
+    }
+
+    Money getMoney() {
+        return money.clone()
     }
 }

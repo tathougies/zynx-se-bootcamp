@@ -3,7 +3,7 @@ class FoodStand3 {
     private foodPrices
     private foodStock
     private money
-    private validate = new Validator()
+    private validate = new Validator1()
     private paymentCalculator
 
     FoodStand3(String[] foodNames,
@@ -96,6 +96,10 @@ class FoodStand3 {
 
     void setPaymentCalculator(ChangeCalculator paymentCalculator) {
         this.paymentCalculator = paymentCalculator
+    }
+
+    Money getMoney() {
+        return money.clone()
     }
 }
 

@@ -93,6 +93,10 @@ class FoodStand1 {
             println "Sorry, we do not have ${foodName}s here."
         }
     }
+
+    Money getMoney() {
+        return money.clone()
+    }
 }
 
 

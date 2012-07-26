@@ -1,13 +1,14 @@
-class TicketBooth5 {
+class TicketBooth6 {
     private movieNames
     private movieTimes
     private ticketPrice
     private tickets
     private money
-    private validate = new Validator1()
+    private validate = new Validator2()
     private paymentCalculator
+    private checkMovieNameInMovieNames
 
-    TicketBooth5(String[] movieNames,
+    TicketBooth6(String[] movieNames,
                  Map<String, Time> movieTimes,
                  Money ticketPrice,
                  Integer tickets,
@@ -20,6 +21,7 @@ class TicketBooth5 {
         this.tickets = tickets
         this.money = money
         this.paymentCalculator = paymentCalculator
+        this.checkMovieNameInMovieNames = validate.&inList.curry(this.&noMovieMessage, movieNames)
     }
 
     String toString() {
@@ -44,7 +46,7 @@ class TicketBooth5 {
 
     void showTicketPrice(String movieName) {
         try {
-            validate.inList(movieName, movieNames, noMovieMessage(movieName))
+            checkMovieNameInMovieNames(movieName)
             println "The ticket will cost ${ticketPrice}."
         }
         catch (Exception e) {
@@ -64,8 +66,8 @@ class TicketBooth5 {
 
     void buyTicket(String movieName, Time movieTime, Money payment) {
         try{
-            validate.inList(movieName, movieNames, noMovieMessage(movieName))
-            validate.inList(movieTime, movieTimes[movieName], noTimeMessage(movieName, movieTime))
+            checkMovieNameInMovieNames(movieName)
+            validate.inList(noTimeMessage(movieName, movieTime), movieTimes[movieName], movieTime)
             validate.isPositive(tickets, noTicketsMessage())
             def change = paymentCalculator.calculateChange(payment, ticketPrice)
             println "Your change is ${change}."

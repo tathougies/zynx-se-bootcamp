@@ -1,12 +1,14 @@
-class FoodStand4 {
+class FoodStand6 {
     private foodNames
     private foodPrices
     private foodStock
     private money
-    private validate = new Validator1()
+    private validate = new Validator2()
     private paymentCalculator
+    private noFoodMessageProducer
+    private checkFoodNameInFoodNames
 
-    FoodStand4(String[] foodNames,
+    FoodStand6(String[] foodNames,
                Map<String, Money> foodPrices,
                Map<String, Integer> foodStock,
                Money money,
@@ -17,6 +19,8 @@ class FoodStand4 {
         this.foodStock = foodStock
         this.money = money
         this.paymentCalculator = paymentCalculator
+        noFoodMessageProducer = this.&noFoodMessage
+        checkFoodNameInFoodNames = validate.&inList.curry(noFoodMessageProducer, foodNames)
     }
 
     String[] getFoodNames() {
@@ -39,9 +43,11 @@ class FoodStand4 {
         return "You need to restock with a positive amount."
     }
 
+
+
     void showPrice(String foodName) {
         try {
-            validate.inList(foodName, foodNames, noFoodMessage(foodName))
+            checkFoodNameInFoodNames(foodName)
             println "${foodName} costs ${foodPrices[foodName]}"
         }
         catch (Exception e) {
@@ -51,14 +57,12 @@ class FoodStand4 {
 
     void showFoodNames() {
         println "We have the following foods:"
-        for (foodName in foodNames) {
-            println foodName
-        }
+        foodNames.each { foodName -> println foodName}
     }
 
     void showAmountOfFood(String foodName) {
         try {
-            validate.inList(foodName, foodNames, noFoodMessage(foodName))
+            checkFoodNameInFoodNames(foodName)
             println "We have ${foodStock[foodName]} ${foodName}s."
         }
         catch (Exception e) {
@@ -68,7 +72,7 @@ class FoodStand4 {
 
     void buyFood(String foodName, Money payment) {
         try {
-            validate.inList(foodName, foodNames, noFoodMessage(foodName))
+            checkFoodNameInFoodNames(foodName)
             validate.isPositive(foodStock[foodName], outOfStockMessage(foodName))
             def price = foodPrices[foodName]
             def change = paymentCalculator.calculateChange(payment, price)
@@ -84,7 +88,7 @@ class FoodStand4 {
 
     void restockFood(String foodName, Integer newFoodAmount) {
         try {
-            validate.inList(foodName, foodNames, noFoodMessage(foodName))
+            checkFoodNameInFoodNames(foodName)
             validate.isPositive(newFoodAmount, restockingWithNothingMessage())
             foodStock[foodName] += newFoodAmount
             println "We used to have ${foodStock[foodName] - newFoodAmount} ${foodName}s and now we have ${foodStock[foodName]}"
@@ -98,7 +102,7 @@ class FoodStand4 {
         this.paymentCalculator = paymentCalculator
     }
 
-    void accept(MovieTheaterVisitor1 movieTheaterVisitor) {
+    void accept(MovieTheaterVisitor2 movieTheaterVisitor) {
         movieTheaterVisitor.visit(this)
     }
 
@@ -106,4 +110,3 @@ class FoodStand4 {
         return money.clone()
     }
 }
-

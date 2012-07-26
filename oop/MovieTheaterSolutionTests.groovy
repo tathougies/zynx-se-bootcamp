@@ -218,3 +218,24 @@ theaterManager5.visitStands(movieTheaterVisitor)
 
 movieTheaterVisitor = new PrintVisitor2()
 theaterManager5.visitStands(movieTheaterVisitor)
+
+foodStand6 = new FoodStand6(foodNames, foodPrices, foodStock, money, noTaxCalculator)
+
+foodStand6.showPrice("Popcorn")
+foodStand6.showPrice("Lobster")
+
+foodStand6.showAmountOfFood("Hot Dog")
+foodStand6.showAmountOfFood("Lasagna")
+
+foodStand6.buyFood("Hot Dog", new Money(10.0))
+foodStand6.showAmountOfFood("Hot Dog")
+
+foodStand6.buyFood("Popcorn", new Money(1.0))
+
+foodStand6.buyFood("Soda", new Money(10.0))
+foodStand6.buyFood("Lobster", new Money(5.00))
+
+foodStand6.restockFood("Soda", 40)
+foodStand6.showAmountOfFood("Soda")
+foodStand6.restockFood("Soda", -20)
+foodStand6.restockFood("Pizza", 10)

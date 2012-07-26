@@ -3,7 +3,7 @@ class FoodStand5 {
     private foodPrices
     private foodStock
     private money
-    private validate = new Validator()
+    private validate = new Validator1()
     private paymentCalculator
 
     FoodStand5(String[] foodNames,
@@ -38,6 +38,8 @@ class FoodStand5 {
     private String restockingWithNothingMessage() {
         return "You need to restock with a positive amount."
     }
+
+
 
     void showPrice(String foodName) {
         try {
@@ -98,5 +100,9 @@ class FoodStand5 {
 
     void accept(MovieTheaterVisitor2 movieTheaterVisitor) {
         movieTheaterVisitor.visit(this)
+    }
+
+    Money getMoney() {
+        return money.clone()
     }
 }
