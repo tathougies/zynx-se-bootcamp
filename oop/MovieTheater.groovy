@@ -1,14 +1,14 @@
 class MovieTheater {
-    public def showTimes = [:]
-    public float ticketPrice
-    public def foodNames = []
-    public def foodStock = [:]
-    public def foodPrices = [:]
-    public def theaters = []
-    public def movies = []
-    public def movieLocations = [:]
-    public float money = 0.0
-    public int tickets
+    private def showTimes = [:]
+    private float ticketPrice
+    private def foodNames = []
+    private def foodStock = [:]
+    private def foodPrices = [:]
+    private def theaters = []
+    private def movies = []
+    private def movieLocations = [:]
+    private float money = 0.0
+    private int tickets
 
     MovieTheater(
             Map<String, float[]> showTimes,
