@@ -1,4 +1,4 @@
-public interface MovieTheaterVisitor {
+public interface MovieTheaterVisitor1 {
 
     void visit(TicketBooth4 ticketBooth)
 

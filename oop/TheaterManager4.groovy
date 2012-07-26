@@ -8,7 +8,7 @@ class TheaterManager4 {
     TheaterManager4(TicketBooth4 ticketBooth,
                     FoodStand4 foodStand,
                     TheaterFacade2[] theaters,
-                    Map<String, Theater1> movieLocations,
+                    Map<String, Theater2> movieLocations,
                     Money money
     ) {
         this.ticketBooth = ticketBooth
@@ -42,7 +42,7 @@ class TheaterManager4 {
         }
     }
 
-    void visitStands(MovieTheaterVisitor movieTheaterVisitor) {
+    void visitStands(MovieTheaterVisitor1 movieTheaterVisitor) {
         ticketBooth.accept(movieTheaterVisitor)
         foodStand.accept(movieTheaterVisitor)
     }

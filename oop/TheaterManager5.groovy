@@ -1,12 +1,12 @@
-class TheaterManager3 {
+class TheaterManager5 {
     private ticketBooth
     private foodStand
     private theaters
     private movieLocations
     private money
 
-    TheaterManager3(TicketBooth3 ticketBooth,
-                    FoodStand3 foodStand,
+    TheaterManager5(TicketBooth5 ticketBooth,
+                    FoodStand5 foodStand,
                     TheaterFacade2[] theaters,
                     Map<String, Theater2> movieLocations,
                     Money money
@@ -37,8 +37,11 @@ class TheaterManager3 {
     }
 
     void runTheaters() {
-        for (theater in theaters) {
-            theater.runTheater()
-        }
+        theaters.each { theater -> theater.run }
+    }
+
+    void visitStands(MovieTheaterVisitor1 movieTheaterVisitor) {
+        ticketBooth.accept(movieTheaterVisitor)
+        foodStand.accept(movieTheaterVisitor)
     }
 }

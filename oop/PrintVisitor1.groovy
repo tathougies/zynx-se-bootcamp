@@ -1,4 +1,4 @@
-class PrintVisitor implements MovieTheaterVisitor {
+class PrintVisitor1 implements MovieTheaterVisitor1 {
 
     void visit(TicketBooth4 ticketBooth) {
         ticketBooth.showMovieNameAndTime()

@@ -1,4 +1,4 @@
-class FoodStand4 {
+class FoodStand5 {
     private foodNames
     private foodPrices
     private foodStock
@@ -6,7 +6,7 @@ class FoodStand4 {
     private validate = new Validator()
     private paymentCalculator
 
-    FoodStand4(String[] foodNames,
+    FoodStand5(String[] foodNames,
                Map<String, Money> foodPrices,
                Map<String, Integer> foodStock,
                Money money,
@@ -51,9 +51,7 @@ class FoodStand4 {
 
     void showFoodNames() {
         println "We have the following foods:"
-        for (foodName in foodNames) {
-            println foodName
-        }
+        foodNames.each { foodName -> println foodName}
     }
 
     void showAmountOfFood(String foodName) {
@@ -98,8 +96,7 @@ class FoodStand4 {
         this.paymentCalculator = paymentCalculator
     }
 
-    void accept(MovieTheaterVisitor1 movieTheaterVisitor) {
+    void accept(MovieTheaterVisitor2 movieTheaterVisitor) {
         movieTheaterVisitor.visit(this)
     }
 }
-

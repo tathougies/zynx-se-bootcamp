@@ -200,8 +200,8 @@ ticketBooth4 = new TicketBooth4(movieNames, movieTimes, ticketPrice, tickets, mo
 
 theaterManager4 = new TheaterManager4(ticketBooth4, foodStand4, theaterFacades21, movieLocations, money)
 
-movieTheaterVisitor = new RestockVisitor(42)
+movieTheaterVisitor = new RestockVisitor1(42)
 theaterManager4.visitStands(movieTheaterVisitor)
 
-movieTheaterVisitor = new PrintVisitor()
+movieTheaterVisitor = new PrintVisitor1()
 theaterManager4.visitStands(movieTheaterVisitor)

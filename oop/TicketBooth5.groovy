@@ -1,4 +1,4 @@
-class TicketBooth4 {
+class TicketBooth5 {
     private movieNames
     private movieTimes
     private ticketPrice
@@ -7,7 +7,7 @@ class TicketBooth4 {
     private validate = new Validator()
     private paymentCalculator
 
-    TicketBooth4(String[] movieNames,
+    TicketBooth5(String[] movieNames,
                  Map<String, Time> movieTimes,
                  Money ticketPrice,
                  Integer tickets,
@@ -54,12 +54,8 @@ class TicketBooth4 {
 
     void showMovieNameAndTime() {
         println "We are selling tickets for the following movies and at the following times:"
-        for (movieName in movieNames) {
-            println movieName
-            for (time in movieTimes[movieName]) {
-                println time
-            }
-        }
+        movieNames.each { movieName -> println movieName;
+            movieTimes[movieName].each { time -> println time } }
     }
 
     void showNumberOfTickets() {
@@ -96,7 +92,7 @@ class TicketBooth4 {
         this.paymentCalculator = paymentCalculator
     }
 
-    void accept(MovieTheaterVisitor1 movieTheaterVisitor) {
+    void accept(MovieTheaterVisitor2 movieTheaterVisitor) {
         movieTheaterVisitor.visit(this)
     }
 }
