@@ -35,7 +35,7 @@ class MovieTheater {
     void showFoodPrice(String foodName) {
         def price = foodPrices[foodName]
         if (price) {
-            println "${foodname} costs ${price.toString()}."
+            println "${foodName} costs ${price.toString()}."
         }
         else
             println "Sorry, we don't have ${foodName} here."
