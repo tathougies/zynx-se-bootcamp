@@ -37,10 +37,10 @@ class TheaterManager5 {
     }
 
     void runTheaters() {
-        theaters.each { theater -> theater.run }
+        theaters.each { theater -> theater.runTheater() }
     }
 
-    void visitStands(MovieTheaterVisitor1 movieTheaterVisitor) {
+    void visitStands(MovieTheaterVisitor2 movieTheaterVisitor) {
         ticketBooth.accept(movieTheaterVisitor)
         foodStand.accept(movieTheaterVisitor)
     }

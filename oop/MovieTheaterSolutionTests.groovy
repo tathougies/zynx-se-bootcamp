@@ -184,7 +184,7 @@ secondTheater = new NormalTheater("4", "Batman", times)
 thirdTheater = new NormalTheater("6", "Superman", times)
 fourthTheater = new DriveInTheaterAdaptor(new DriveInTheater("Drive in", "Cars", time))
 movieTimes = ["Spiderman":times, "Batman":times, "Superman":times, "Cars":[time]]
-
+movieLocations = ["Spiderman":firstTheater, "Batman":secondTheater, "Superman":thirdTheater, "Cars":fourthTheater]
 TheaterFacade2[] theaterFacades2 = [new TheaterFacade2(firstTheater), new TheaterFacade2(secondTheater), new TheaterFacade2(thirdTheater), new TheaterFacade2(fourthTheater)]
 theaterManager3 = new TheaterManager3(ticketBooth3, foodStand3, theaterFacades2, movieLocations, money)
 
@@ -205,3 +205,16 @@ theaterManager4.visitStands(movieTheaterVisitor)
 
 movieTheaterVisitor = new PrintVisitor1()
 theaterManager4.visitStands(movieTheaterVisitor)
+
+ticketBooth5 = new TicketBooth5(movieNames, movieTimes, ticketPrice, tickets, money, noTaxCalculator)
+ticketBooth5.showMovieNameAndTime()
+foodStand5 = new FoodStand5(foodNames, foodPrices, foodStock, money, noTaxCalculator)
+foodStand5.showFoodNames()
+theaterManager5 = new TheaterManager5(ticketBooth5, foodStand5, theaterFacades21, movieLocations, money)
+theaterManager5.runTheaters()
+
+movieTheaterVisitor = new RestockVisitor2(42)
+theaterManager5.visitStands(movieTheaterVisitor)
+
+movieTheaterVisitor = new PrintVisitor2()
+theaterManager5.visitStands(movieTheaterVisitor)
