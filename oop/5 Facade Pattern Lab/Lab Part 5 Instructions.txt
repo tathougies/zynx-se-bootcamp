@@ -1,0 +1,10 @@
+Lab Part 5: Using the Adaptor Pattern
+
+We want to use a drive-in movie theater in our new MovieTheater. The problem is
+that the interface for the drive-in movie theater is not the same as a regular
+theater. We would like TheaterManager to treat drive-in and normal Theaters 
+uniformly.
+
+So make Theater an interface and move your original implementation into a class
+that then implements the new Theater interface. Then use a new TheaterAdaptor
+class to adapt the drive-in theater to be run according to the Theater interface.

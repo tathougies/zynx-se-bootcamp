@@ -1,0 +1,8 @@
+Lab Part 8: Currying with Closures
+
+Now for the tricky part.  We want you to try out using closures in a more
+sophisticated way.  For this purpose, we would like you to use currying 
+and the ability to pass closures as arguments to simplify our calls to
+Validator's inList method.  Our only hint is that this should reduce the 
+check for if an object is in a particular list to a function of a single 
+parameter. Get to it!
