@@ -96,7 +96,9 @@ ticketBooth.buyTicket("Spiderman", new Time(18, 15), new Money(5.00))
 ticketBooth.restockTickets(10)
 ticketBooth.restockTickets(-10)
 
-Theater[] theaters = [firstTheater, secondTheater, thirdTheater]
-theaterManager = new TheaterManager(ticketBooth, foodStand, theaters, movieLocations, money)
+TheaterFacade[] theaterFacades = [new TheaterFacade(firstTheater), new TheaterFacade(secondTheater), new TheaterFacade(thirdTheater)]
+theaterManager = new TheaterManager(ticketBooth, foodStand, theaterFacades, movieLocations, money)
+
+theaterManager.runTheaters()
 theaterManager.showMovieLocation("Superman")
 theaterManager.showMovieLocation("Total Recall")

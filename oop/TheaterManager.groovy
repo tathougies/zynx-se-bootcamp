@@ -6,10 +6,10 @@ class TheaterManager {
     private money
 
     TheaterManager(TicketBooth ticketBooth,
-                   FoodStand foodStand,
-                   Theater[] theaters,
-                   Map<String, Theater> movieLocations,
-                   Money money
+                    FoodStand foodStand,
+                    TheaterFacade[] theaters,
+                    Map<String, Theater> movieLocations,
+                    Money money
     ) {
         this.ticketBooth = ticketBooth
         this.foodStand = foodStand
@@ -38,11 +38,7 @@ class TheaterManager {
 
     void runTheaters() {
         for (theater in theaters) {
-            theater.dimLights()
-            theater.showPreviews()
-            theater.showMovie()
-            theater.rollCredits()
-            theater.cleanTheater()
+            theater.runTheater()
         }
     }
 }
