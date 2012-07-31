@@ -1,0 +1,32 @@
+attributes - title of every non-english book
+
+/catalog/book/title[@lang!='en']
+//title[@lang!='en']
+/catalog/book/title[@lang='de'] | /catalog/book/title[@lang='es']
+//title[@lang='de'] | //title[@lang='es']
+
+position - last three books
+
+/catalog/book[contains(@id, 'bk11')]
+//book[contains(@id, 'bk11')]
+/catalog/book[position()>last()-3]
+//book[position()>last()-3]
+/catalog/book[genre="Computer" and @id!='bk101']
+//book[genre="Computer" and @id!='bk101']
+
+operators - return the authors of every book that costs over $10
+
+/catalog/book[price>10]/author
+//book[price>10]/author
+/catalog/book[genre="Computer"]/author
+//book[genre="Computer"]/author
+
+return the titles of the three books in a series
+
+/catalog/book[author="Corets, Eva"]/title
+//book[author="Corets, Eva"]/title
+/catalog/book[contains(description, "Maeve")]/title | //book[contains(title, "Maeve")]/title
+//book[contains(description, "Maeve")]/title | //book[contains(title, "Maeve")]/title
+/catalog/book[genre="Fantasy" and author!="Ralls, Kim"]/title
+//book[genre="Fantasy" and author!="Ralls, Kim"]/title
+
