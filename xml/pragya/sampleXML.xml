@@ -1,0 +1,213 @@
+<network_schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<professors>
+<root_proff>
+<proff_id>PI1</proff_id>
+<proff_name>David</proff_name>
+<proff_title>Professor</proff_title>
+</root_proff>
+<root_proff>
+<proff_id>PI2</proff_id>
+<proff_name>Michael</proff_name>
+<proff_title>Professor</proff_title>
+</root_proff>
+<root_proff>
+<proff_id>PI3</proff_id>
+<proff_name>Joe</proff_name>
+<proff_title>Professor</proff_title>
+</root_proff>
+</professors>
+<posts>
+<root_posts>
+<post_id>POI301</post_id>
+<date_created>2011-09-01</date_created>
+<content>hello, everyone</content>
+<creator>SI101</creator>
+</root_posts>
+<root_posts>
+<post_id>POI302</post_id>
+<date_created>2011-09-02</date_created>
+<content>free food in lobby</content>
+<creator>SI101</creator>
+</root_posts>
+<root_posts>
+<post_id>POI303</post_id>
+<date_created>2011-09-03</date_created>
+<content>anyone has taken 201 before?</content>
+<creator>SI102</creator>
+</root_posts>
+<root_posts>
+<post_id>POI304</post_id>
+<date_created>2011-09-04</date_created>
+<content>lost a book</content>
+<creator>SI103</creator>
+</root_posts>
+</posts>
+<researchareas>
+<root_rarea>
+<rarea_id>RID1</rarea_id>
+<rarea_name>CG</rarea_name>
+<field>Computer graphics</field>
+</root_rarea>
+<root_rarea>
+<rarea_id>RID2</rarea_id>
+<rarea_name>CV</rarea_name>
+<field>Computer Visualization</field>
+</root_rarea>
+<root_rarea>
+<rarea_id>RID3</rarea_id>
+<rarea_name>SYS</rarea_name>
+<field>Systems</field>
+</root_rarea>
+<root_rarea>
+<rarea_id>RID4</rarea_id>
+<rarea_name>Database</rarea_name>
+<field>Database Systems</field>
+</root_rarea>
+</researchareas>
+<courses>
+<root_course>
+<course crs_id="CI1">
+<crscode>CI201</crscode>
+<semester>Fall2011</semester>
+</course>
+<crsName>Database</crsName>
+<credits>3</credits>
+<taughtby>PI2</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI2">
+<crscode>CI201</crscode>
+<semester>Fall2010</semester>
+</course>
+<crsName>Database</crsName>
+<credits>3</credits>
+<taughtby>PI1</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI3">
+<crscode>CI202</crscode>
+<semester>Fall2011</semester>
+</course>
+<crsName>Algorithm</crsName>
+<credits>3</credits>
+<taughtby>PI3</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI4">
+<crscode>CI202</crscode>
+<semester>Fall2010</semester>
+</course>
+<crsName>Algorithm</crsName>
+<credits>3</credits>
+<taughtby>PI3</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI5">
+<crscode>CI203</crscode>
+<semester>Fall2011</semester>
+</course>
+<crsName>OS</crsName>
+<credits>3</credits>
+<taughtby>PI2</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI6">
+<crscode>CI203</crscode>
+<semester>Fall2010</semester>
+</course>
+<crsName>OS</crsName>
+<credits>3</credits>
+<taughtby>PI1</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI7">
+<crscode>CI204</crscode>
+<semester>Fall2011</semester>
+</course>
+<crsName>CV</crsName>
+<credits>3</credits>
+<taughtby>PI3</taughtby>
+</root_course>
+<root_course>
+<course crs_id="CI8">
+<crscode>CI204</crscode>
+<semester>Fall2010</semester>
+</course>
+<crsName>CV</crsName>
+<credits>3</credits>
+<taughtby>PI1</taughtby>
+</root_course>
+</courses>
+<students>
+<root_student>
+<stud_id>SI101</stud_id>
+<sname>Jack</sname>
+<advisor>PI1</advisor>
+<rinterest>RID1</rinterest>
+<rinterest>RID2</rinterest>
+<courseTaken crskey="CI5"/>
+<courseTaken crskey="CI1"/>
+<courseTaken crskey="CI4"/>
+<courseTaken crskey="CI7"/>
+<posts_liked>POI304</posts_liked>
+<posts_liked>POI302</posts_liked>
+<posts_liked>POI301</posts_liked>
+<posts_liked>POI303</posts_liked>
+<friend>SI103</friend>
+<friend>SI102</friend>
+<friend>SI104</friend>
+</root_student>
+<root_student>
+<stud_id>SI102</stud_id>
+<sname>Mike</sname>
+<advisor>PI2</advisor>
+<rinterest>RID1</rinterest>
+<rinterest>RID3</rinterest>
+<courseTaken crskey="CI1"/>
+<courseTaken crskey="CI4"/>
+<courseTaken crskey="CI7"/>
+<posts_liked>POI302</posts_liked>
+<posts_liked>POI303</posts_liked>
+<friend>SI103</friend>
+<friend>SI101</friend>
+</root_student>
+<root_student>
+<stud_id>SI103</stud_id>
+<sname>Jim</sname>
+<advisor>PI2</advisor>
+<rinterest>RID2</rinterest>
+<rinterest>RID4</rinterest>
+<courseTaken crskey="CI6"/>
+<courseTaken crskey="CI1"/>
+<posts_liked>POI304</posts_liked>
+<posts_liked>POI302</posts_liked>
+<friend>SI101</friend>
+<friend>SI102</friend>
+</root_student>
+<root_student>
+<stud_id>SI104</stud_id>
+<sname>Jordan</sname>
+<advisor>PI3</advisor>
+<rinterest>RID1</rinterest>
+<rinterest>RID3</rinterest>
+<courseTaken crskey="CI1"/>
+<courseTaken crskey="CI7"/>
+<posts_liked>POI304</posts_liked>
+<posts_liked>POI302</posts_liked>
+<posts_liked>POI301</posts_liked>
+<posts_liked>POI303</posts_liked>
+<friend>SI101</friend>
+<friend>SI105</friend>
+</root_student>
+<root_student>
+<stud_id>SI105</stud_id>
+<sname>Mary</sname>
+<advisor>PI1</advisor>
+<rinterest>RID1</rinterest>
+<courseTaken crskey="CI1"/>
+<posts_liked>POI301</posts_liked>
+<posts_liked>POI303</posts_liked>
+<friend>SI104</friend>
+</root_student>
+</students>
+</network_schema>
