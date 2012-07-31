@@ -119,4 +119,11 @@ class TravelStep {
         return true
     }
 
+    public String formatDate(inDate){
+        if (inDate == null)
+            throw Exception("Missing Date")
+
+
+    }
+
 }

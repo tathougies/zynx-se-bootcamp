@@ -14,6 +14,7 @@ class TravelStepTest{
     public void isValidDateReturnsTrueOnValidDateWithNoPunctuation(){
         def date = "073012"
         def result = step.isValidDate(date)
+        assertNotNull(result)
         assertTrue(result)
     }
 
@@ -321,5 +322,17 @@ class TravelStepTest{
                 'date' : '073012']
         def result = step.load(dict)
         assertNull(result)
+    }
+
+    @Test(expected = Exception)
+    public void formatDateThrowsExceptionOnNullInput(){
+        def result = step.formatDate()
+    }
+
+    @Test
+    public void formatDateReturnsCorrectOutputOnInputSlashes(){
+        def date = "07/30/12"
+        def result = step.formatDate()
+        assertEquals("073012",result)
     }
 }
