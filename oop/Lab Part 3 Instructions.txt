@@ -1,0 +1,19 @@
+Lab Part 3: Introducing the Strategy Pattern
+
+Now your code should be looking pretty clean and fairly easy to maintain.
+It's time to add some functionality.  We would like you to introduce the
+ability for your FoodStand and TicketBooth classes to calculate change
+based on the presence of a tax rate.  However, we want to have some
+flexibility here.  For instance, in different states the tax rate may
+vary.  Additionally, we want to be able to adapt if a state changes 
+its tax rate.  This means we should be able to change the tax rate
+we use at runtime.  So, we want to have choices between multiple 
+algorithms for a similar purpose and we want to be able to alter
+the algorithm we use at runtime.  This sounds like a strategy
+pattern to me.
+
+We would like you to create an interface called ChangeCalculator
+and a couple of classes that implement the interface.  These 
+classes should contain a method that takes as input a payment
+and a price and returns the proper change depending on the tax rate
+used for that ChangeCalculator.

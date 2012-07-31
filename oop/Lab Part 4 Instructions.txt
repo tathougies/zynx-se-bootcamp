@@ -1,0 +1,14 @@
+Lab Part 4: Adding a Facade to Our Theater
+
+Right now to make a theater run a movie, the TheaterManager has to call a whole
+bunch of functions from Theater. If Theater changes at all, we would have to 
+reorganize all these functions in TheaterManager. We would prefer if the 
+interface of Theater to TheaterManager was simplified, and that TheaterManager
+didn't have to know so much about how theater runs.
+
+Therefore, we will make use of the facade pattern. This will consolidate all those
+function calls into one public member function of TheaterFacade. This will make 
+it easier to manage Theater from TheaterManager as well as decouple those two 
+classes. 
+
+Now, make a TheaterFacade class to wrap all the function calls for Theater. 
