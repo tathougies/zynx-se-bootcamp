@@ -5,7 +5,7 @@ secondTime = new Time(18, 10)
 thirdTime = new Time(22, 50)
 Time[] times = [firstTime, secondTime, thirdTime]
 
-firstTheater = new Theater("10", "Spiderman", times)
+firstTheater = new NormalTheater("10", "Spiderman", times)
 
 firstTheater.dimLights()
 firstTheater.showPreviews()
@@ -63,8 +63,8 @@ foodStand.restockFood("Pizza", 10)
 String[] movieNames = ["Spiderman", "Batman", "Superman"]
 
 movieTimes = ["Spiderman":times, "Batman":times, "Superman":times]
-secondTheater = new Theater("4", "Batman", times)
-thirdTheater = new Theater("6", "Superman", times)
+secondTheater = new NormalTheater("4", "Batman", times)
+thirdTheater = new NormalTheater("6", "Superman", times)
 movieLocations = ["Spiderman":firstTheater, "Batman":secondTheater, "Superman":thirdTheater]
 ticketPrice = new Money(11.50)
 tickets = 100
@@ -92,11 +92,13 @@ ticketBooth.buyTicket("Batman", new Time(18, 10), new Money(10.0))
 ticketBooth.buyTicket("Wall-E", new Time(18, 10), new Money(5.00))
 ticketBooth.buyTicket("Spiderman", new Time(18, 15), new Money(5.00))
 
-
 ticketBooth.restockTickets(10)
 ticketBooth.restockTickets(-10)
 
-TheaterFacade[] theaterFacades = [new TheaterFacade(firstTheater), new TheaterFacade(secondTheater), new TheaterFacade(thirdTheater)]
+time = new Time(12, 0)
+fourthTheater = new DriveInTheaterAdaptor(new DriveInTheater("Drive in", "Cars", time))
+
+TheaterFacade[] theaterFacades = [new TheaterFacade(firstTheater), new TheaterFacade(secondTheater), new TheaterFacade(thirdTheater), new TheaterFacade(fourthTheater)]
 theaterManager = new TheaterManager(ticketBooth, foodStand, theaterFacades, movieLocations, money)
 
 theaterManager.runTheaters()

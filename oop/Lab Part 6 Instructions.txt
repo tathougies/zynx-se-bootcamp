@@ -1,0 +1,12 @@
+Lab Part 6: Using the Visitor Pattern
+
+So now we want to be able to perform certain actions on the FoodStand and the 
+TicketBooth classes, but we don't want our TheaterManager class to get too
+bloated with all these functions to implement those actions. We also want to decouple
+the theater manager from the implementation of TicketBooth and FoodStand.
+
+To solve this, we want to make a MovieTheaterVisitor interface. Then we can simply implement 
+the interface to add new functionality to TheaterManager. First make the interface
+and the corresponding changes to the TicketBooth, FoodStand, and TheaterManager 
+classes. Then implement one for printing out information about the stands, then 
+one for restocking the stands.

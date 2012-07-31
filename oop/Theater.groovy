@@ -1,39 +1,12 @@
-class Theater {
-    private name
-    private movie
-    private times
+public interface Theater {
 
-    Theater(
-            String name,
-            String movie,
-            Time[] times
-    )   {
-        this.name = name
-        this.movie = movie
-        this.times = times
-    }
+    void dimLights()
 
-    String toString() {
-        return name
-    }
+    void showPreviews()
 
-    void dimLights() {
-        println "Dimming lights in theater ${name}."
-    }
+    void showMovie()
 
-    void showPreviews() {
-        println "Showing previews in theater ${name}."
-    }
+    void rollCredits()
 
-    void showMovie() {
-        println "Showing ${movie} in theater ${name}."
-    }
-
-    void rollCredits() {
-        println "Rolling credits for ${movie} in theater ${name}."
-    }
-
-    void cleanTheater() {
-        println "Cleaning theater ${name}."
-    }
+    void cleanTheater()
 }
