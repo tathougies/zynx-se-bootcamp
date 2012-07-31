@@ -1,0 +1,16 @@
+Lab Part 2: Simplifying Error Handling
+
+Now that you have refactored the original MovieTheater class into separate and
+more maintainable parts, you may have noticed some fairly ugly looking nested
+ifs checking for proper inputs.  We want to replace these now to make our
+code look nicer and also help ourselves if we ever want to modify our
+checks in the future.
+
+To this end, we suggest you create a Validator class that contains a couple
+of methods.  The first method we will call inList which takes as input
+any object, any list of objects, and a string for the error message.  The
+method should check if the input object is in the given list of objects,
+and if not, we would like to throw an exception which contains the error
+message.  The second method should do the same thing for checking if an
+input float is positive.  We then leave it up to you to properly replace
+the nested ifs in your other class files.
