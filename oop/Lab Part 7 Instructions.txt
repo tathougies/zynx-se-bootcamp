@@ -1,0 +1,8 @@
+Lab Part 7: Using List Comprehension with Closures
+
+We've added quite a bit of functionality to our theater.  Now it's time to
+go back to improving our code's readability and maintainability using our
+new functional programming skills.  The first step shouldn't take very long.
+All we want you to do is replace those relatively verbose for loops with list
+comprehension in the form of the .each method.  This will also give you a
+chance to try out closures as well.
