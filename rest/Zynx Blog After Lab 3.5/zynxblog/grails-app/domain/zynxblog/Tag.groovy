@@ -10,7 +10,7 @@ class Tag implements Comparable{
     SortedSet posts
 
     static constraints = {
-        tag(nullable:false, length:0..50)
+        tag(nullable:false, size:0..50)
     }
 
     int compareTo(obj)

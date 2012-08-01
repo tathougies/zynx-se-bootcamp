@@ -14,8 +14,8 @@ class Post {
     SortedSet tags
 
     static constraints = {
-        title(nullable:false, blank:false, length:1..50)
-        teaser(length:0..100)
+        title(nullable:false, blank:false, size:1..50)
+        teaser(size:0..100)
         content(nullable:false)
         lastUpdated(nullable:true, blank:false)
         published(nullable:false)
